@@ -1,0 +1,39 @@
+[project]
+name = "kaggle-template"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "sinchir0", email = "dekunattou@gmail.com" }
+]
+dependencies = [
+    "ipython>=8.26.0",
+    "ipykernel>=6.29.5",
+    "polars>=1.5.0",
+    "numpy>=2.1.0",
+    "lightgbm>=4.5.0",
+    "scikit-learn>=1.5.1",
+    "seaborn>=0.13.2",
+    "pyarrow>=17.0.0",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+"kaggle-template" = "kaggle_template:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.ruff]
+extend-include = ["*.ipynb"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kaggle_at_paperspace_template"]
